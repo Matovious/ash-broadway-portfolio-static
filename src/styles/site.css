@@ -359,9 +359,15 @@ hr {
  * edge, and its own size because .entry-content p is set to the body size.
  */
 
+/* The caption's own bottom padding provides the separation, so the intro
+   adds none of its own. */
+.content-figure.no-padding figcaption:has(+ .figure-intro) {
+	padding-bottom: 0.75rem;
+}
+
 .content-figure .figure-intro {
 	margin: 0;
-	padding: 0.75rem 2.5rem 2.5rem;
+	padding: 0 2.5rem 2.5rem;
 	font-size: var(--base-size);
 	font-weight: 400;
 	line-height: 160%;
