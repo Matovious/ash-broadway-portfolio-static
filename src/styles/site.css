@@ -362,7 +362,7 @@ hr {
 .content-figure .figure-intro {
 	margin: 0;
 	padding: 0.75rem 2.5rem 2.5rem;
-	font-size: var(--lg-size);
+	font-size: var(--base-size);
 	font-weight: 400;
 	line-height: 160%;
 	text-align: center;
