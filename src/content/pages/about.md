@@ -2,11 +2,10 @@
 title: "About"
 heroImage: "/media/ash-broadway-copywriter.webp"
 heroCaption: "self"
+heroIntro: "My grandfather wrote “self” underneath every picture of himself in his photo albums. His eyes were blue like the sky and he had a smile that made you know he was listening. It tickled me and now I do it too."
 ---
 
-*My grandfather wrote “self” underneath every picture of himself in his photo albums. His eyes were blue like the sky and he had a smile that made you know he was listening. It tickled me and now I do it too.*
-
-Hi! My name is Ash.  
+# Hi! My name is Ash.
 
 I am a storyteller who helps brands find their voice through:
 

@@ -62,6 +62,8 @@ const pages = defineCollection({
 		title: z.string(),
 		heroImage: z.string().optional(),
 		heroCaption: z.string().default(""),
+		/** Sits inside the image frame, beneath the caption. */
+		heroIntro: z.string().default(""),
 	}),
 });
 
