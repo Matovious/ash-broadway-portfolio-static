@@ -424,10 +424,25 @@ hr {
 	gap: 0.5em;
 	white-space: nowrap;
 	pointer-events: none;
+	transition: background-color 0.3s ease-out;
 }
 
 .img-container.is-linked a {
 	opacity: 0.5;
+}
+
+/*
+ * Hover feedback. --ui-950 is already near-black, so deepening the button
+ * alone would barely register; most of the effect comes from the image
+ * receding further, which lifts the button's contrast against it.
+ */
+
+.img-container.is-linked:hover::before {
+	background: #000;
+}
+
+.img-container.is-linked:hover a {
+	opacity: 0.35;
 }
 
 /* Testimonials ----------------------------------------------------------- */
