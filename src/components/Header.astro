@@ -1,0 +1,129 @@
+---
+/**
+ * The WordPress theme drove this with Alpine loaded from a CDN. The only
+ * interactive part is the mobile menu, so it is a few lines of vanilla JS here
+ * and the CDN dependency is gone.
+ */
+const FOLIO_PDF = "/media/ashley-broadway-award-school-folio-upload.pdf";
+const EMAIL = "ash.broadway@gmail.com";
+
+const nav = [
+	{ label: "About", href: "/", className: "about-icon" },
+	{ label: "Work", href: "/portfolio/", className: "work-icon" },
+	{ label: "Testimonials", href: "/testimonials/", className: "testimonials-icon" },
+	{ label: "AWARD School", href: FOLIO_PDF, className: "folio-icon", external: true },
+];
+
+const path = Astro.url.pathname;
+---
+
+<header id="masthead" class="site-header">
+	<!-- Mobile -->
+	<div class="mobile-menu-container">
+		<div class="left">
+			<a href="/">
+				<img class="profile-pic" src="/assets/profile.jpg" alt="" loading="lazy" />
+				<span class="name">Ash Broadway</span>
+			</a>
+		</div>
+
+		<button
+			type="button"
+			class="mobile-menu-toggle"
+			aria-expanded="false"
+			aria-controls="mobile-menu"
+			data-menu-open
+		>
+			<img src="/assets/hamburger.svg" alt="Open menu" width="24" height="24" />
+		</button>
+
+		<div class="mobile-menu" id="mobile-menu" hidden>
+			<div class="inner">
+				<div class="close-button-container">
+					<button type="button" class="close-button" data-menu-close>
+						<img src="/assets/close.svg" alt="Close menu" width="24" height="24" />
+					</button>
+				</div>
+
+				<div class="top">
+					<nav class="primary-menu">
+						<ul class="menu primary-menu">
+							{
+								nav.map((item) => (
+									<li class={item.className}>
+										<a
+											href={item.href}
+											aria-current={path === item.href ? "page" : undefined}
+											{...(item.external ? { target: "_blank", rel: "noopener" } : {})}
+										>
+											{item.label}
+										</a>
+									</li>
+								))
+							}
+						</ul>
+					</nav>
+				</div>
+
+				<div class="bottom">
+					<div class="contact-card">
+						<img class="profile-pic" src="/assets/profile.jpg" alt="" loading="lazy" />
+						<h3 class="lg name">Ash Broadway</h3>
+						<p class="sm role">Copywriter | Brand Voice Strategist</p>
+						<p class="sm email"><a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Desktop -->
+	<div class="desktop-menu-container py-64 px-56">
+		<div class="top">
+			<nav class="primary-menu">
+				<ul class="menu primary-menu">
+					{
+						nav.map((item) => (
+							<li class={item.className}>
+								<a
+									href={item.href}
+									aria-current={path === item.href ? "page" : undefined}
+									{...(item.external ? { target: "_blank", rel: "noopener" } : {})}
+								>
+									{item.label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+		</div>
+
+		<div class="bottom">
+			<div class="contact-card">
+				<img class="profile-pic" src="/assets/profile.jpg" alt="Ash Broadway" />
+				<h3 class="lg name">Ash Broadway</h3>
+				<p class="xs role">Copywriter | Brand Voice Strategist</p>
+				<p class="sm email"><a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
+			</div>
+		</div>
+	</div>
+</header>
+
+<script>
+	const menu = document.getElementById("mobile-menu");
+	const opener = document.querySelector<HTMLButtonElement>("[data-menu-open]");
+
+	const setOpen = (open: boolean) => {
+		if (!menu || !opener) return;
+		menu.hidden = !open;
+		opener.setAttribute("aria-expanded", String(open));
+		document.body.style.overflow = open ? "hidden" : "";
+	};
+
+	opener?.addEventListener("click", () => setOpen(true));
+	document.querySelector("[data-menu-close]")?.addEventListener("click", () => setOpen(false));
+	document.addEventListener("keydown", (event) => {
+		if (event.key === "Escape" && menu && !menu.hidden) setOpen(false);
+	});
+</script>

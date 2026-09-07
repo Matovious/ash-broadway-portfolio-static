@@ -1,0 +1,145 @@
+# Sveltia CMS — the editing interface at /admin/
+#
+# Content is committed straight to this repository, so every edit is a normal
+# git commit and Railway redeploys on push. There is no database and no
+# separate CMS service to keep running.
+
+backend:
+  name: github
+  repo: Matovious/ash-broadway-portfolio-static
+  branch: main
+  # We host the OAuth endpoints ourselves (src/pages/auth.ts, callback.ts)
+  # because Railway, unlike Netlify, does not provide one.
+  base_url: https://ashbroadway.com
+  auth_endpoint: auth
+
+site_url: https://ashbroadway.com
+display_url: https://ashbroadway.com
+
+# Uploads land in the repo at public/media/ and are served from /media/
+media_folder: public/media
+public_folder: /media
+
+collections:
+  - name: case-studies
+    label: Case studies
+    label_singular: Case study
+    folder: src/content/case-studies
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    slug: "{{title}}"
+    identifier_field: title
+    summary: "{{title}}"
+    sortable_fields: [order, date, title]
+    fields:
+      - name: title
+        label: Title
+        widget: string
+        hint: The full sentence shown as the page heading, e.g. "An anti-bullying activation for LEGO."
+      - name: order
+        label: Order on the Work page
+        widget: number
+        value_type: int
+        default: 99
+        hint: Lower numbers appear first.
+      - name: date
+        label: Date
+        widget: datetime
+        date_format: YYYY-MM-DD
+        time_format: false
+        picker_utc: true
+      - name: logo
+        label: Client logo
+        widget: image
+        required: false
+        hint: The small logo shown beside the title on the Work page.
+      - name: logoAlt
+        label: Logo description
+        widget: string
+        required: false
+        hint: Describes the logo for screen readers, e.g. "Bankwest logo".
+      - name: draft
+        label: Draft — hide from the site
+        widget: boolean
+        default: false
+        required: false
+      - name: sections
+        label: Sections
+        label_singular: Section
+        widget: list
+        summary: "{{fields.heading}}"
+        hint: Usually The brief, The scope, The process, The outcome — but add or remove as you like.
+        fields:
+          - name: heading
+            label: Heading
+            widget: string
+            default: The brief
+          - name: body
+            label: Body
+            widget: markdown
+          - name: image
+            label: Image
+            widget: image
+            required: false
+          - name: imageLink
+            label: Image links to
+            widget: file
+            required: false
+            hint: Optional. Attach a PDF and the image becomes a "View project" link.
+
+  - name: testimonials
+    label: Testimonials
+    label_singular: Testimonial
+    folder: src/content/testimonials
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    slug: "{{name}}"
+    identifier_field: name
+    summary: "{{name}} — {{company}}"
+    sortable_fields: [order, name]
+    fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: role
+        label: Role
+        widget: string
+        required: false
+      - name: company
+        label: Company
+        widget: string
+        required: false
+      - name: order
+        label: Order
+        widget: number
+        value_type: int
+        default: 99
+        hint: Lower numbers appear first.
+      - name: quote
+        label: Quote
+        widget: text
+        hint: No need to add quote marks — they are added automatically.
+
+  - name: pages
+    label: Pages
+    files:
+      - name: about
+        label: About (the homepage)
+        file: src/content/pages/about.md
+        fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: heroImage
+            label: Photo
+            widget: image
+            required: false
+          - name: heroCaption
+            label: Photo caption
+            widget: string
+            required: false
+          - name: body
+            label: Body
+            widget: markdown

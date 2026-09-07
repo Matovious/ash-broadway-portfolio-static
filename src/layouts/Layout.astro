@@ -1,0 +1,68 @@
+---
+import "../styles/global.css";
+import "../styles/layout.css";
+import "../styles/typography.css";
+import "../styles/site.css";
+import Header from "../components/Header.astro";
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+}
+
+const {
+	title,
+	description = "Ash Broadway is a copywriter and brand voice strategist helping brands find their voice.",
+	image = "/media/ash-broadway-copywriter.jpeg",
+} = Astro.props;
+
+const siteName = "Ash Broadway";
+const pageTitle = title ? `${title} | ${siteName}` : siteName;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<title>{pageTitle}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+
+		<link rel="preload" href="/fonts/GeneralSans-Variable.woff2" as="font" type="font/woff2" crossorigin />
+
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="2000" />
+		<meta property="og:image:height" content="1050" />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={siteName} />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icons/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/icons/apple-touch-icon-152x152.png" />
+		<link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16" />
+		<meta name="application-name" content={siteName} />
+		<meta name="msapplication-TileColor" content="#FFFFFF" />
+		<meta name="msapplication-TileImage" content="/icons/mstile-144x144.png" />
+	</head>
+
+	<body class="wrapper">
+		<div id="page" class="site">
+			<Header />
+			<div id="content" class="site-content">
+				<slot />
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+const testimonials = (await getCollection("testimonials")).sort(
+	(a, b) => a.data.order - b.data.order,
+);
+
+const attribution = (data: { name: string; role: string; company: string }) =>
+	[data.name, data.role, data.company].filter(Boolean).join(", ");
+---
+
+<Layout title="Testimonials" description="What people say about working with Ash Broadway.">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main container">
+			<div class="entry-content">
+				{
+					testimonials.map((item) => (
+						<figure class="testimonial">
+							<blockquote>&ldquo;{item.data.quote}&rdquo;</blockquote>
+							<figcaption>{attribution(item.data)}</figcaption>
+						</figure>
+					))
+				}
+			</div>
+		</main>
+	</div>
+</Layout>

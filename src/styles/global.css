@@ -1,0 +1,45 @@
+:root {
+	--viewport-sm: 600px;
+	--viewport-md: 900px;
+	--viewport-lg: 1200px;
+	--viewport-xl: 1500px;
+	--viewport-2x: 2000px;
+
+	--ui-50: oklch(0.985 0 0);
+	--ui-100: oklch(0.97 0 0);
+	--ui-200: oklch(0.922 0 0);
+	--ui-300: oklch(0.87 0 0);
+	--ui-400: oklch(0.708 0 0);
+	--ui-500: oklch(0.556 0 0);
+	--ui-600: oklch(0.439 0 0);
+	--ui-700: oklch(0.371 0 0);
+	--ui-800: oklch(0.269 0 0);
+	--ui-900: oklch(0.205 0 0);
+	--ui-950: oklch(0.145 0 0);
+
+	/* Safari viewport height fix */
+	--vh: 1vh;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+body {
+	background-color: var(--ui-100);
+}
+
+html {
+	font-size: var(--base-size);
+	font-family: --font-primary;
+	color: var(--ui-950);
+}

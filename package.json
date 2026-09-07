@@ -1,0 +1,21 @@
+{
+  "name": "ash-broadway-portfolio-static",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "HOST=0.0.0.0 node ./dist/server/entry.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "astro": "^5",
+    "@astrojs/node": "^9",
+    "@astrojs/sitemap": "^3",
+    "marked": "^15"
+  }
+}

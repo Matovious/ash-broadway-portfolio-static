@@ -1,0 +1,66 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import { marked } from "marked";
+import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = (async () => {
+	const caseStudies = await getCollection("caseStudies", ({ data }) => !data.draft);
+	return caseStudies.map((study) => ({ params: { slug: study.id }, props: { study } }));
+}) satisfies GetStaticPaths;
+
+const { study } = Astro.props;
+
+// Section bodies live in frontmatter so each one stays a separate field in the
+// CMS, which means rendering their markdown here rather than via the collection.
+const sections = study.data.sections.map((section) => ({
+	...section,
+	html: marked.parse(section.body, { async: false }),
+}));
+
+const description = study.data.sections[0]?.body.split("\n")[0] ?? "";
+---
+
+<Layout title={study.data.title} description={description}>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main container">
+			<article>
+				<header class="entry-header pb-48">
+					<div class="title-container">
+						<h1 class="d3 entry-title pb-16">{study.data.title}</h1>
+					</div>
+				</header>
+
+				<div class="entry-content">
+					{
+						sections.map((section) => (
+							<section class="content-block">
+								<div class="content-block-inner">
+									{section.heading && (
+										<h2 class="h4 block-heading">{section.heading}</h2>
+									)}
+									<div class="body" set:html={section.html} />
+								</div>
+
+								{section.image &&
+									(section.imageLink ? (
+										<div class="img-container">
+											<a href={section.imageLink} target="_blank" rel="noopener">
+												<img src={section.image} alt="" loading="lazy" />
+											</a>
+										</div>
+									) : (
+										<div class="img-container">
+											<img src={section.image} alt="" loading="lazy" />
+										</div>
+									))}
+
+								<hr class="hr-draw mt-64 mb-56" />
+							</section>
+						))
+					}
+				</div>
+			</article>
+		</main>
+	</div>
+</Layout>
