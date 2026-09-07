@@ -5,9 +5,23 @@ import Layout from "../layouts/Layout.astro";
 const about = await getEntry("pages", "about");
 if (!about) throw new Error("src/content/pages/about.md is missing");
 const { Content } = await render(about);
+
+/**
+ * Deliberately omits email: it would hand scrapers in plain JSON exactly what
+ * the obfuscated mailto link is trying to keep from them.
+ */
+const person = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: "Ash Broadway",
+	jobTitle: "Copywriter and Brand Voice Strategist",
+	url: "https://ashbroadway.com/",
+	image: new URL(about.data.heroImage ?? "/media/ash-broadway-copywriter.webp", Astro.site).href,
+};
 ---
 
 <Layout>
+	<script type="application/ld+json" set:html={JSON.stringify(person)} is:inline />
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main container">
 			<article class="entry-content">
