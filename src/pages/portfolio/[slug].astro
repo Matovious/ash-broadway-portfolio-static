@@ -64,6 +64,14 @@ const description = study.data.sections[0]?.body.split("\n")[0] ?? "";
 							</section>
 						))
 					}
+					{
+						study.data.gallery.map((item) => (
+							<figure class="content-figure">
+								<img src={item.image} alt={item.alt} loading="lazy" />
+								{item.caption && <figcaption>{item.caption}</figcaption>}
+							</figure>
+						))
+					}
 				</div>
 			</article>
 		</main>

@@ -18,11 +18,8 @@ sections:
       From this, I:
 
       - Defined a clear and unified purpose and vision.
-
       - Developed four brand pillars to articulate WAMA’s role in the community.
-
       - Identified primary and secondary audiences to guide communications and event planning.
-
       - Created a set of tone of voice principles to ensure consistency across all touchpoints—balancing playfulness with confidence.
   - heading: "The outcome"
     body: |-

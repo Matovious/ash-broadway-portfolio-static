@@ -64,6 +64,26 @@ collections:
         widget: boolean
         default: false
         required: false
+      - name: gallery
+        label: Images
+        label_singular: Image
+        widget: list
+        required: false
+        summary: "{{fields.caption}}"
+        hint: Shown at the bottom of the case study, after the sections.
+        fields:
+          - name: image
+            label: Image
+            widget: image
+          - name: caption
+            label: Caption
+            widget: string
+            required: false
+          - name: alt
+            label: Image description
+            widget: string
+            required: false
+            hint: Describes the image for screen readers.
       - name: sections
         label: Sections
         label_singular: Section

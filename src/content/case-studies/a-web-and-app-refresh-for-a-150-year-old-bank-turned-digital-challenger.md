@@ -4,6 +4,13 @@ order: 2
 date: 2025-10-05
 logo: "/media/bankwest-logo.png"
 logoAlt: "A web and app refresh for a 150-year-old bank turned digital challenger."
+gallery:
+  - image: "/media/bankwest-01.webp"
+    caption: "Bankwest homepage"
+  - image: "/media/bankwest-02.webp"
+    caption: "Bankwest App Store screenshots"
+  - image: "/media/bankwest-edm.webp"
+    caption: "Bankwest launch comms"
 sections:
   - heading: "The brief"
     body: |-
@@ -15,13 +22,10 @@ sections:
     body: |-
       I led the strategic execution of the new tone of voice across Bankwest’s digital ecosystem. Using the updated tone principles, I:
 
-      Shifted the brand voice from a “nice guy” persona to one that’s **simpler, more self-assured, and modern**.
-
-      Crafted copy that was **unexpected and impactful** in key moments (e.g., homepage, app welcome screens), while keeping it **functional and clear** where needed.
-
-      Balanced **brand authenticity** with **customer experience**, while navigating competing priorities like SEO and conversion metrics.
-
-      To ensure tonal consistency across the bank’s comms, I also ran **tone of voice workshops** for other writers that explored each principle in detail – how it contributed to the brand identity, the role it played in customer engagement, when to use it, and if so, how.
+      - Shifted the brand voice from a “nice guy” persona to one that’s **simpler, more self-assured, and modern**.
+      - Crafted copy that was **unexpected and impactful** in key moments (e.g., homepage, app welcome screens), while keeping it **functional and clear** where needed.
+      - Balanced **brand authenticity** with **customer experience**, while navigating competing priorities like SEO and conversion metrics.
+      - To ensure tonal consistency across the bank’s comms, I also ran **tone of voice workshops** for other writers that explored each principle in detail – how it contributed to the brand identity, the role it played in customer engagement, when to use it, and if so, how.
   - heading: "The outcome"
     body: |-
       The refreshed copy helped Bankwest make a confident entrance into the digital banking space, with a voice that felt both fresh and familiar. The workshops also empowered internal teams to maintain consistency and evolve the brand voice independently.

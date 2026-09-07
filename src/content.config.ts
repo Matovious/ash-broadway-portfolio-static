@@ -17,6 +17,20 @@ const caseStudies = defineCollection({
 		logo: z.string().optional(),
 		logoAlt: z.string().optional(),
 		draft: z.boolean().default(false),
+		/**
+		 * Standalone images shown after the sections. On the WordPress site
+		 * these were plain Gutenberg image blocks sitting outside the ACF
+		 * blocks entirely.
+		 */
+		gallery: z
+			.array(
+				z.object({
+					image: z.string(),
+					caption: z.string().default(""),
+					alt: z.string().default(""),
+				}),
+			)
+			.default([]),
 		sections: z
 			.array(
 				z.object({

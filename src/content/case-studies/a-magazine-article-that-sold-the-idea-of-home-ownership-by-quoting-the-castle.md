@@ -17,13 +17,10 @@ sections:
 
       I drew readers in by using some of the most popular quotes from the quintessential Aussie movie, *The Castle*, as the reasons why home is so important to us. I wrote the article with a strategic blend of **nostalgia, humour, and education**. This approach:
 
-      **Hooked readers** with familiar, culturally resonant lines that celebrated the emotional value of home.
-
-      Used a **tight, list-based structure** to keep the copy digestible and flexible for educational segues.
-
-      Balanced **personality and clarity**, hitting a tone that was friendly, personable, and informative.
-
-      Hit on a tone that was friendly, personable and relatable, and covered all the insights that BGC wanted to bring to light.
+      - **Hooked readers** with familiar, culturally resonant lines that celebrated the emotional value of home.
+      - Used a **tight, list-based structure** to keep the copy digestible and flexible for educational segues.
+      - Balanced **personality and clarity**, hitting a tone that was friendly, personable, and informative.
+      - Hit on a tone that was friendly, personable and relatable, and covered all the insights that BGC wanted to bring to light.
   - heading: "The outcome"
     body: |-
       The article successfully helped BGC connect with readers in a way that felt both authentic and memorable. It reinforced the emotional and practical value of home ownership, while showcasing BGC’s brand personality in a new format.

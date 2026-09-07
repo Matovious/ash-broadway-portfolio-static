@@ -14,9 +14,7 @@ sections:
   - heading: "The process"
     body: |-
       - Insight: Bullying persists because education values hard skills over soft skills, so kids are able to solve equations but not resolve conflict.
-
-      - Opportunity: LEGO reimagines education to value both hard *and* soft skills, by providing kids with the tools they need to learn empathy, kindness, and inclusion.
-
+      - Opportunity: LEGO reimagines education to value both hard *and* soft skills, by providing kids with the tools they need to learn empathy, kindness, and inclusion.
       - Result: LEGO creates a safe space where children celebrate difference and build a sense of belonging.
   - heading: "The outcome"
     body: |-
