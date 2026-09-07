@@ -397,12 +397,22 @@ hr {
 	border-radius: 1rem;
 }
 
-.img-container::before {
+/*
+ * The button and the dimmed image were a desktop hover state. They are now
+ * the default at every width, so a downloadable asset is always signposted
+ * rather than only being discoverable by hovering.
+ *
+ * Scoped to .is-linked: an image with no asset behind it must not advertise
+ * one, and the CMS allows an image without a link.
+ */
+
+.img-container.is-linked::before {
 	content: "View project";
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	display: flex;
 	background: var(--ui-950);
 	font-weight: 500;
 	color: #fff;
@@ -414,23 +424,10 @@ hr {
 	gap: 0.5em;
 	white-space: nowrap;
 	pointer-events: none;
-	cursor: pointer;
 }
 
-@media (max-width: 900px) {
-	.img-container a {
-		opacity: 0.5;
-	}
-}
-
-@media (min-width: 900px) {
-	.img-container::before {
-		display: none;
-	}
-
-	.img-container:hover::before {
-		display: flex;
-	}
+.img-container.is-linked a {
+	opacity: 0.5;
 }
 
 /* Testimonials ----------------------------------------------------------- */
