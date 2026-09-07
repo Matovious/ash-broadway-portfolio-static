@@ -45,13 +45,18 @@ const description = study.data.sections[0]?.body.split("\n")[0] ?? "";
 								{section.image &&
 									(section.imageLink ? (
 										<div class="img-container">
-											<a href={section.imageLink} target="_blank" rel="noopener">
-												<img src={section.image} alt="" loading="lazy" />
+											<a
+												href={section.imageLink}
+												target="_blank"
+												rel="noopener"
+												aria-label={`View project: ${study.data.title}`}
+											>
+												<img src={section.image} alt={section.imageAlt ?? ""} loading="lazy" />
 											</a>
 										</div>
 									) : (
 										<div class="img-container">
-											<img src={section.image} alt="" loading="lazy" />
+											<img src={section.image} alt={section.imageAlt ?? ""} loading="lazy" />
 										</div>
 									))}
 

@@ -10,6 +10,7 @@ const { Content } = await render(about);
 <Layout>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main container">
+			<h1 class="visually-hidden">Ash Broadway — Copywriter and Brand Voice Strategist</h1>
 			<article class="entry-content">
 				{
 					about.data.heroImage && (
@@ -17,8 +18,8 @@ const { Content } = await render(about);
 							<img
 								src={about.data.heroImage}
 								alt={about.data.heroCaption || about.data.title}
-								width="2000"
-								height="1050"
+								width="1744"
+								height="916"
 							/>
 							{about.data.heroCaption && (
 								<figcaption><em>{about.data.heroCaption}</em></figcaption>

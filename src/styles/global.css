@@ -39,7 +39,9 @@ body {
 }
 
 html {
-	font-size: var(--base-size);
-	font-family: --font-primary;
+	/* 100%, not a fixed px value, so a larger browser default font size is
+	   respected rather than overridden. */
+	font-size: 100%;
+	font-family: var(--font-primary);
 	color: var(--ui-950);
 }

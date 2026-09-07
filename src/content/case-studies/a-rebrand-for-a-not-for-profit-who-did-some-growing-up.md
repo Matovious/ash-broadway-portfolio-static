@@ -27,7 +27,7 @@ sections:
   - heading: "The outcome"
     body: |-
       The rebrand gave WAMA a renewed sense of identity and direction. It provided clarity for internal decision-making and external communications, and laid the groundwork for more cohesive, confident engagement with their community.
-    image: "/media/wama-heart-thumbnail.jpg"
+    image: "/media/wama-heart-thumbnail.webp"
     imageLink: "/media/wama-brand-refresh-brand-heart-2025.pdf"
   - heading: ""
     body: |-

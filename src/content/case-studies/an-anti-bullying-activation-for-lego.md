@@ -21,6 +21,6 @@ sections:
   - heading: "The outcome"
     body: |-
       New LEGO experiences that stand out and unlock fresh brand relevance.
-    image: "/media/lego-creative-cover.png"
+    image: "/media/lego-creative-cover.webp"
     imageLink: "/media/final-creative-1.pdf"
 ---

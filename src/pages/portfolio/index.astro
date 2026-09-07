@@ -11,6 +11,7 @@ const caseStudies = (await getCollection("caseStudies", ({ data }) => !data.draf
 <Layout title="Work" description="Selected copywriting and brand voice work by Ash Broadway.">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+			<h1 class="visually-hidden">Work</h1>
 			<div class="container work-items">
 				{
 					caseStudies.map((study) => (

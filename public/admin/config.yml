@@ -82,6 +82,11 @@ collections:
             label: Image
             widget: image
             required: false
+          - name: imageAlt
+            label: Image description
+            widget: string
+            required: false
+            hint: Describes the image for screen readers. Leave blank if it is purely decorative.
           - name: imageLink
             label: Image links to
             widget: file

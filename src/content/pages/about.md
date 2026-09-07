@@ -1,6 +1,6 @@
 ---
 title: "About"
-heroImage: "/media/ash-broadway-copywriter.jpeg"
+heroImage: "/media/ash-broadway-copywriter.webp"
 heroCaption: "self"
 ---
 

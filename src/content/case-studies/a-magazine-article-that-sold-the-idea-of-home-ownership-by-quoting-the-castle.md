@@ -27,6 +27,6 @@ sections:
   - heading: "The outcome"
     body: |-
       The article successfully helped BGC connect with readers in a way that felt both authentic and memorable. It reinforced the emotional and practical value of home ownership, while showcasing BGC’s brand personality in a new format.
-    image: "/media/magazine-castle.jpg"
+    image: "/media/magazine-castle.webp"
     imageLink: "/media/why-our-home-is-the-castle.pdf"
 ---
