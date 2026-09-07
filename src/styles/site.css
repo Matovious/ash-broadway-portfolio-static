@@ -353,6 +353,17 @@ hr {
 	margin-bottom: 0;
 }
 
+/*
+ * Browsers zero the margin on a nested list, so the first sub-item sat flush
+ * against its parent while every sibling below it had 1rem of separation.
+ * Matches the spacing the rest of the list already uses.
+ */
+
+.entry-content li > ul,
+.entry-content li > ol {
+	margin-top: 1rem;
+}
+
 /* Case study sections ---------------------------------------------------- */
 
 .content-block {
